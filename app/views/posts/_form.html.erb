@@ -1,0 +1,25 @@
+<%= form_with model: post do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+  <br><br>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </div>
+  <br>
+
+  <div>
+    <%= form.submit %>
+  </div>
+  <br>
+
+  <h4><%= "Error creating post" if post.errors.any? %><br></h4>
+  <div style="color: red" >
+    <% post.errors.each do |error| %>
+      <%= error.full_message %><br>
+    <% end %>
+  </div>
+<% end %>

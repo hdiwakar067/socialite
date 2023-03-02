@@ -1,0 +1,19 @@
+<h1>Show page</h1>
+<p class="title">
+  <strong> Title: <%= @post.title %></strong>
+</p>
+
+<p class = "date">
+  Submitted: <%= time_ago_in_words(@post.created_at) %> ago
+</p>
+
+<p class = "body">
+  Caption: <%= @post.body %>
+</p>
+
+<%= link_to "Edit post", edit_post_path(@post) %> &emsp;
+
+<%= link_to "Delete post", post_path(@post), data: {
+  turbo_method: :delete,
+  turbo_confirm: "Are you sure?"
+} %>
