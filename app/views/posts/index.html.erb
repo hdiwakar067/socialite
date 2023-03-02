@@ -1,0 +1,20 @@
+<h1>Index page</h1>
+
+<button><%= link_to "Create New Post", new_post_path %></button><br>
+<br>
+
+<% @posts.each do |post|%>
+  <div class="post_wrapper">
+    <h2 class="title"><%= link_to post.title, post%></h2>
+    <p class="date"><%= post.created_at.strftime('%B %d, %Y')%></p>
+    <p> Caption: <%= post.body %></p>
+
+    <%= link_to "See post", post_path(post) %> &emsp;
+    <%= link_to "Edit post", edit_post_path(post) %> &emsp;
+    <%= link_to "Delete post", post_path(post), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %>
+    <hr> <br>
+  </div>
+<% end %>
