@@ -7,6 +7,7 @@ ruby "3.2.1"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 # gem 'better_errors', '~> 2.9', '>= 2.9.1'
+gem "devise"
 
 gem 'bootstrap', '~> 5.2.2'
 gem 'jquery-rails'
